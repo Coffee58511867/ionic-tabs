@@ -15,30 +15,54 @@
       <ion-label position="floating">First Name</ion-label>
       <ion-input placeholder="Enter First name" formControlName="name"></ion-input>
     </ion-item>
+    <span
+    class="error2"
+    *ngIf="isSubmitted && errorControl['name'].errors?.['required']"
+  >
+    First name is required
+  </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Last Name</ion-label>
       <ion-input placeholder="Enter Last name" formControlName="lastname"></ion-input>
     </ion-item>
+    <span
+    class="error2"
+    *ngIf="isSubmitted && errorControl['lastname'].errors?.['required']"
+  >
+    Last name is required
+  </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Date of Birth</ion-label>
       <ion-input type="date" placeholder="Enter date of birth" formControlName="date"></ion-input>
     </ion-item>
+    <span
+    class="error2"
+    *ngIf="isSubmitted && errorControl['date'].errors?.['required']"
+  >
+    Date of birth is required
+  </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Physical Address</ion-label>
       <ion-input placeholder="Enter address here" formControlName="address"></ion-input>
     </ion-item>
+    <span
+    class="error2"
+    *ngIf="isSubmitted && errorControl['address'].errors?.['required']"
+  >
+    Physical address is required
+  </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Email Address</ion-label>
       <ion-input type="email" placeholder="Enter email address" formControlName="email"></ion-input>
     </ion-item>
     <span
-    class="error"
+    class="error2"
     *ngIf="isSubmitted && errorControl['email'].errors?.['required']"
   >
     Email address is required
   </span>
   <span
-    class="error"
+    class="error2"
     *ngIf="isSubmitted && errorControl['email'].errors?.['email']"
   >
     Valid Email address is required
@@ -48,13 +72,13 @@
       <ion-input type="password" placeholder="Enter passord" formControlName="password"></ion-input>
     </ion-item>
     <span
-    class="error"
+    class="error2"
     *ngIf="isSubmitted && errorControl['password'].errors?.['required']"
   >
     Password is required
   </span>
   <span
-    class="error"
+    class="error2"
     *ngIf="isSubmitted && errorControl['password'].errors?.['minlength']"
   >
     Password should be atleast 6 characters
