@@ -1,16 +1,37 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Home Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-button expand="block" routerLink="/tabs" style="margin-top: 150px;">Dash board</ion-button>
+<ion-content>
+  <ion-card style="margin-top: 60px;">
+    <ion-card-header>
+      <ion-avatar style="margin-left: 130px;">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-card-title style="text-align: center;">Sign In</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form style="padding: 7px;">
+        <ion-item fill="solid">
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input type="=email" placeholder="Enter email address"></ion-input>
+        </ion-item>
+        <ion-item fill="solid" style="margin-top: 6px;">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" placeholder="Enter pssword"></ion-input>
+        </ion-item>
+        <ion-button expand="block" style="margin-top: 10px; height: 40px; margin-left: 10px; margin-right: 10px;"
+        routerLink="/tabs"
+        >
+          Login</ion-button>
+        <ion-button expand="block" style="margin-top: 5px; height: 40px; margin-left: 10px; margin-right: 10px;"
+        routerLink="/tabs/tab2"
+        >
+          Register</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
