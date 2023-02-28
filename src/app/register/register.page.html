@@ -63,7 +63,7 @@
   </span>
   <span
     class="error2"
-    *ngIf="isSubmitted && errorControl['email'].errors?.['email']"
+    *ngIf="isSubmitted && errorControl['email'].errors?.['pattern']"
   >
     Valid Email address is required
   </span>
@@ -81,8 +81,15 @@
     class="error2"
     *ngIf="isSubmitted && errorControl['password'].errors?.['minlength']"
   >
-    Password should be atleast 6 characters
+    Password should be atleast 8 characters
   </span>
+  <!-- <span
+  class="error2"
+  *ngIf="isSubmitted && errorControl['password'].errors?.['pattern']"
+>
+  Password must contain at least one number, one uppercase and a lowercase letter
+  and at least 8 characters<br>Password cannot contain whitespace
+</span> -->
     <ion-button expand="block"
     (click)="showLoading()"
     type="submit"
