@@ -14,20 +14,43 @@
     </ion-card-header>
 
     <ion-card-content>
-      <form style="padding: 7px;">
+      <form style="padding: 7px;" [formGroup]="loginform" (ngSubmit)="login(email, password)">
         <ion-item fill="solid">
           <ion-label position="floating">Email Address</ion-label>
-          <ion-input type="=email" placeholder="Enter email address"></ion-input>
+          <ion-input type="=email" name="email" #email placeholder="Enter email address"></ion-input>
         </ion-item>
+        <span
+        class="error"
+        *ngIf="isSubmitted && errorControl['email'].errors?.['required']"
+      >
+        Email address is required
+      </span>
+      <span
+        class="error"
+        *ngIf="isSubmitted && errorControl['email'].errors?.['email']"
+      >
+        Valid Email address is required
+      </span>
         <ion-item fill="solid" style="margin-top: 6px;">
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" placeholder="Enter pssword"></ion-input>
+          <ion-input type="password" name="password" #password placeholder="Enter pssword"></ion-input>
         </ion-item>
-        <ion-button expand="block" style="margin-top: 10px; height: 40px; margin-left: 10px; margin-right: 10px;"
-        routerLink="/tabs"
+        <span
+        class="error"
+        *ngIf="isSubmitted && errorControl['password'].errors?.['required']"
+      >
+        Password is required
+      </span>
+      <span
+        class="error"
+        *ngIf="isSubmitted && errorControl['password'].errors?.['minlength']"
+      >
+        Password should be atleast 6 characters
+      </span>
+        <ion-button expand="block" type="submit" style="margin-top: 10px; height: 40px; margin-left: 10px; margin-right: 10px;"
         >
           Login</ion-button>
-        <ion-button expand="block" style="margin-top: 5px; height: 40px; margin-left: 10px; margin-right: 10px;"
+        <ion-button expand="block" type="submit" style="margin-top: 5px; height: 40px; margin-left: 10px; margin-right: 10px;"
         routerLink="/register"
         >
           Register</ion-button>

@@ -11,7 +11,9 @@
     margin-right: 30px;
     width: 340px;
     position: sticky;
-    "></ion-searchbar>
+    "
+    [(ngModel)]="searchText"
+    ></ion-searchbar>
    <ion-list>
     <ion-item routerLink="/page1">
         <ion-icon slot="start" name="man" color="danger"></ion-icon>
