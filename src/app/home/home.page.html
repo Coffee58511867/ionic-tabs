@@ -41,12 +41,6 @@
       >
         Password is required
       </span>
-      <span
-        class="error"
-        *ngIf="isSubmitted && errorControl['password'].errors?.['minlength']"
-      >
-        Password should be atleast 6 characters
-      </span>
         <ion-button expand="block" type="submit" style="margin-top: 10px; height: 40px; margin-left: 10px; margin-right: 10px;"
         >
           Login</ion-button>
