@@ -17,7 +17,7 @@
       <form style="padding: 7px;" [formGroup]="loginform" (ngSubmit)="login(email, password)">
         <ion-item fill="solid">
           <ion-label position="floating">Email Address</ion-label>
-          <ion-input type="=email" name="email" #email placeholder="Enter email address"></ion-input>
+          <ion-input type="=email" formControlName="email" #email placeholder="Enter email address"></ion-input>
         </ion-item>
         <span
         class="error"
@@ -33,7 +33,7 @@
       </span>
         <ion-item fill="solid" style="margin-top: 6px;">
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" name="password" #password placeholder="Enter pssword"></ion-input>
+          <ion-input type="password" formControlName="password" #password placeholder="Enter pssword"></ion-input>
         </ion-item>
         <span
         class="error"
