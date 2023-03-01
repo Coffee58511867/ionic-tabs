@@ -3,13 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Students</ion-title>
+    <ion-title>UPDATE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form [formGroup] = "apform" (ngSubmit)="updateForm()">
-    <ion-title color="danger" style="text-align: center;">Add Appointment</ion-title>
+    <ion-title color="danger" style="text-align: center; margin-top: 20px; margin-bottom: 10px;">UPDATE BOOKING </ion-title>
     <ion-item lines="full">
       <ion-label position="floating">First name</ion-label>
       <ion-input type="text" required  formControlName="name"></ion-input>
@@ -57,7 +57,9 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+        <ion-button type="submit"
+        style="margin-top: 10px; height: 45px; margin-left: 10px; margin-right: 10px;"
+        expand="block">Submit</ion-button>
       </ion-col>
     </ion-row>
   </form>
