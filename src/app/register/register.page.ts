@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
+import { ProfileService } from '../services/profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,6 +20,8 @@ export class RegisterPage implements OnInit {
 
   constructor(public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder,
+    public userServices: ProfileService,
+    public router : Router,
     ) { }
 
   ngOnInit() {
@@ -44,6 +48,14 @@ export class RegisterPage implements OnInit {
   register(){
     this.isSubmitted = true;
     console.log(this.loginform.value);
+    if(this.loginform.valid){
+      this.userServices.saveProfile(this.loginform.value).then((res: any) => {
+        console.log(res)
+        this.loginform.reset();
+        this.router.navigate(['/home']);
+      })
+        .catch((error: any) => console.log(error));
+    }
   }
 
 }
