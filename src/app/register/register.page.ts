@@ -60,6 +60,12 @@ export class RegisterPage implements OnInit {
         .catch((error: any) => console.log(error));
         this.userService
         .RegisterUser(email.value, password.value)
+        .then(res => {
+            // Do something here
+            window.alert('Please check your inbox to verify email address');
+            // this.toastr.success("Successfully Saved",'',{timeOut:900})
+            this.userService.SendVerificationMail();
+        })
         .catch((error) => {
           window.alert(error.message);
         });
