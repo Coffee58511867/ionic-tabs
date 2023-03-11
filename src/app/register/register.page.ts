@@ -48,7 +48,7 @@ export class RegisterPage implements OnInit {
     loading.present();
   }
 
-  register(){
+  register(email: any, password: any){
     this.isSubmitted = true;
     console.log(this.loginform.value);
     if(this.loginform.valid){
@@ -58,7 +58,12 @@ export class RegisterPage implements OnInit {
         this.router.navigate(['/home']);
       })
         .catch((error: any) => console.log(error));
+        this.userService
+        .RegisterUser(email.value, password.value)
+        .catch((error) => {
+          window.alert(error.message);
+        });
+    }
     }
   }
 
-}

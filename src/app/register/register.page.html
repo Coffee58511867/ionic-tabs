@@ -10,7 +10,7 @@
 <ion-content>
    <ion-title style="margin-top: 50px; text-align: center; font-weight: 500; margin-bottom: 20px;">
     Create Account</ion-title>
-    <form style="padding: 7px;" [formGroup]="loginform" (ngSubmit)="register()">
+    <form style="padding: 7px;" [formGroup]="loginform" (ngSubmit)="register(email,password)">
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">First Name</ion-label>
       <ion-input placeholder="Enter First name" formControlName="name"></ion-input>
@@ -53,7 +53,7 @@
   </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Email Address</ion-label>
-      <ion-input type="email" placeholder="Enter email address" formControlName="email"></ion-input>
+      <ion-input type="email" placeholder="Enter email address" #email formControlName="email"></ion-input>
     </ion-item>
     <span
     class="error2"
@@ -69,7 +69,7 @@
   </span>
     <ion-item style="margin-top: 6px;">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" placeholder="Enter password" formControlName="password"></ion-input>
+      <ion-input type="password" placeholder="Enter password" #password formControlName="password"></ion-input>
     </ion-item>
     <span
     class="error2"
