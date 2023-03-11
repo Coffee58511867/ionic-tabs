@@ -31,7 +31,8 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input type="password" placeholder="Enter pssword"></ion-input>
         </ion-item>
-        <ion-button expand="block" style="margin-top: 10px; height: 45px; margin-left: 10px; margin-right: 10px;">Logout</ion-button>
+        <ion-button expand="block"
+         style="margin-top: 10px; height: 45px; margin-left: 10px; margin-right: 10px;" (click)="userService.SignOut()">Logout</ion-button>
       </form>
     </ion-card-content>
   </ion-card>
