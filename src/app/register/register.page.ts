@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { ProfileService } from '../services/profile.service';
+import { UserService } from '../api/user.service';
 import { Router } from '@angular/router';
+import { User } from '@firebase/auth';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +24,7 @@ export class RegisterPage implements OnInit {
     public formBuilder: FormBuilder,
     public userServices: ProfileService,
     public router : Router,
+    public userService: UserService,
     ) { }
 
   ngOnInit() {
